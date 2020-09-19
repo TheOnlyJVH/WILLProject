@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--Camera Code
+     Coded By: Hilton
+     Edited by:
+     Tested by:
+    -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btnTakePic"
+        android:layout_width="176dp"
+        android:layout_height="71dp"
+        android:layout_marginBottom="68dp"
+        android:text="Take Picture"
+        android:textSize="20dp"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="#FFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageName" />
+
+    <Button
+        android:id="@+id/btnRename"
+        android:layout_width="176dp"
+        android:layout_height="71dp"
+        android:layout_marginBottom="68dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Set name"
+        android:textColor="#FFFF"
+        android:textSize="20dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageName"
+        app:layout_constraintVertical_bias="0.983" />
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="217dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="82dp"
+        android:layout_marginBottom="63dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/imageName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:ems="10"
+        android:hint="Who/What is this?"
+        android:inputType="textPersonName"
+        android:textSize="20dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/btnTakePic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

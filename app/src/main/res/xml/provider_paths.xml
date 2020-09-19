@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--Camera Code
+     Coded By: Hilton
+     Edited by:
+     Tested by:
+    -->
+<paths>
+    <!--<external-path name="external_files" path="."/>-->
+    <external-path
+        name="files_root"
+        path="Android/data/com.higher.login_register_home"/>
+    <external-path
+        name="external_storage_root"
+        path="Android/data/com.higher.login_register_home"/>
+    <external-path
+        name="external_files"
+        path="." />
+</paths>

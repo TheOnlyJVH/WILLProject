@@ -3,6 +3,7 @@ package com.higher.login_register_home;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -46,7 +47,7 @@ public class Home extends AppCompatActivity {
         crdPictures.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(Home.this, .class));
+                startActivity(new Intent(Home.this, PictureMenuActivity.class));
             }
         });
 
