@@ -26,7 +26,7 @@ public class Home extends AppCompatActivity {
         crdShapes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(Home.this, ShapeMatchMenu.class));
+                startActivity(new Intent(Home.this, ShapeMatchMenu.class));
             }
         });
 
