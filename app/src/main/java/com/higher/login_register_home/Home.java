@@ -33,7 +33,7 @@ public class Home extends AppCompatActivity {
         crdMaths.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(Home.this, .class));
+                startActivity(new Intent(Home.this, MathMenuActivity.class));
             }
         });
 
