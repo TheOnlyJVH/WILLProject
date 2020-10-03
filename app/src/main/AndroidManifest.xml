@@ -15,7 +15,9 @@
         android:theme="@style/AppTheme">
 
 
-        <activity android:name=".TakePictureActivity"></activity>
+        <activity android:name=".TakePictureActivity"/>
+        <activity android:name=".ShapeMatch"/>
+        <activity android:name=".ShapeMatchMenu"/>
         <activity android:name=".PictureGame" />
         <activity android:name=".PictureMenuActivity" />
         <activity android:name=".GalleryActivity" />
