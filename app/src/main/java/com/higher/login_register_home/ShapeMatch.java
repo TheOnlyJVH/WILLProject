@@ -1,6 +1,7 @@
 package com.higher.login_register_home;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -14,6 +15,7 @@ import android.widget.Toast;
 
 import com.higher.login_register_home.Adapters.DifficultyAdapter;
 import com.higher.login_register_home.Adapters.OptionsAdapter;
+import com.higher.login_register_home.Message.AnswerDisplay;
 import com.higher.login_register_home.Objects.QuestionObject;
 
 import java.util.ArrayList;
@@ -57,6 +59,10 @@ public class ShapeMatch extends AppCompatActivity {
                     displayCurrNumber += 1;
                     currQuestion += 1;
                     prepQuestion();
+                    AnswerDisplay dialog = new AnswerDisplay();
+                    dialog.setTitle("Correct");
+                    dialog.setMessage("This works");
+                    dialog.show(getSupportFragmentManager(), "MyDialogFragmentTag");
                 }
             }
         });
