@@ -31,7 +31,7 @@ public class MathMenuActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_math_menu);
 
         m.setLevel(1);
         m.setOperator(true,true,true,true);
@@ -40,7 +40,7 @@ public class MathMenuActivity extends AppCompatActivity
         button1 = findViewById(R.id.button1);
         button2 = findViewById(R.id.button2);
         button3 = findViewById(R.id.button3);
-        button4 = findViewById(R.id.buttonNext);
+        button4 = findViewById(R.id.button4);
 
         button1.setOnClickListener(new View.OnClickListener()
         {
