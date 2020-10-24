@@ -75,13 +75,10 @@ public class TakePictureActivity extends AppCompatActivity {
         btnRename.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 if(imageName.getText().toString().isEmpty()){
-                    Toast.makeText(TakePictureActivity.this, "Please give the photo a name first." , Toast.LENGTH_SHORT).show();
+                    Toast.makeText(TakePictureActivity.this, "Please take a photo and then name it before exiting." , Toast.LENGTH_SHORT).show();
                 }
                 else{
-
-
                     String root = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).toString();
                     //String root = TakePictureActivity.this.getExternalMediaDirs().toString();
 
@@ -99,7 +96,9 @@ public class TakePictureActivity extends AppCompatActivity {
                             Toast.makeText(TakePictureActivity.this, "Photo successfully named." , Toast.LENGTH_SHORT).show();
                         from.renameTo(to);
                     }
+
                 }
+
             }
         });
     }
@@ -121,6 +120,35 @@ public class TakePictureActivity extends AppCompatActivity {
                 /*Intent myIntent = new Intent(MainActivity.this, GalleryActivity.class);
                 MainActivity.this.startActivity(myIntent);*/
             }
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(imageName.getText().toString().isEmpty()){
+            Toast.makeText(TakePictureActivity.this, "Please take a photo and then name it before exiting." , Toast.LENGTH_SHORT).show();
+        }
+        else{
+            String root = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).toString();
+            //String root = TakePictureActivity.this.getExternalMediaDirs().toString();
+
+            File dir = new File(root + "/PhotoApp/");
+
+            Log.e("Directory: ", dir.getAbsolutePath());
+
+            if(dir.exists()){
+
+                File from = new File(dir,photo.getName());
+                String [] nameSplit = photo.getName().split("_");
+                File to = new File(dir,imageName.getText() + "_"+ nameSplit[1]);
+                //Toast.makeText(MainActivity.this, name , Toast.LENGTH_SHORT).show();
+                if(from.exists())
+                    Toast.makeText(TakePictureActivity.this, "Photo successfully named." , Toast.LENGTH_SHORT).show();
+                from.renameTo(to);
+            }
+
+            super.onBackPressed();
+
         }
     }
 

@@ -152,7 +152,7 @@ public class PictureGame extends AppCompatActivity {
         });
     }
 
-    private void setupGame(){
+    public void setupGame(){
         //this is the folder with the images that have been captured via the app
         String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Pictures/PhotoApp/";
         allFilesPaths = new ArrayList<>();
@@ -162,18 +162,24 @@ public class PictureGame extends AppCompatActivity {
         Collections.shuffle(images);
         count = 0;
 
-        if(images.size() < 2){
-            Toast.makeText(PictureGame.this, "Please go back and add at least 3 pictures before playing." , Toast.LENGTH_SHORT).show();
+        if(images.size()<3){
+            Toast.makeText(PictureGame.this, "Please add at least 3 pictures before starting the game!" , Toast.LENGTH_SHORT).show();
+
+            Intent myIntent = new Intent(PictureGame.this, PictureMenuActivity.class);
+            PictureGame.this.startActivity(myIntent);
         }
         else{
             loadRound(images);
+
         }
+
 
         /*for (Cell c : images) {
             loadRound(images, count);
             count++;
         }*/
     }
+
 
     private void loadRound(ArrayList<Cell> images){
         ArrayList<String> imageNames = new ArrayList<String>();
