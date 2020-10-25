@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name='nounsverbs'
+rootProject.name='Login_Register_Home'
