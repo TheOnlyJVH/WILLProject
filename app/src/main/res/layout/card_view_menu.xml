@@ -27,14 +27,6 @@
             android:textAlignment="center"
             android:textSize="35dp"/>
 
-        <ImageView
-            android:id="@+id/imgDownload"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:padding="2dp" />
-
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

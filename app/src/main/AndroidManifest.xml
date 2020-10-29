@@ -13,6 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Message.MarkDisplay" />
         <activity android:name=".TakePictureActivity" />
         <activity android:name=".ShapeMatch" />
         <activity android:name=".ShapeMatchMenu" />

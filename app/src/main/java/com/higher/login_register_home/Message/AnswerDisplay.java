@@ -12,6 +12,7 @@ public class AnswerDisplay extends DialogFragment {
     private String title = "Default Title";
     private String message = "Default Message";
 
+
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
@@ -20,10 +21,7 @@ public class AnswerDisplay extends DialogFragment {
         builder.setTitle(title);
         builder.setMessage(message);
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                // You don't have to do anything here if you just
-                // want it dismissed when clicked
-            }
+            public void onClick(DialogInterface dialog, int id) { }
         });
 
         // Create the AlertDialog object and return it

@@ -67,12 +67,7 @@ public class ShapeMatchMenu extends AppCompatActivity {
                 Intent i = new Intent(ShapeMatchMenu.this, ShapeMatch.class);
                 i.putExtra("Level", level);
                 Toast.makeText(ShapeMatchMenu.this, position + "", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(ShapeMatchMenu.this, ShapeMatch.class));
-            }
-
-            @Override
-            public void onDownloadClick(int position)
-            {
+                startActivity(i);
             }
         });
     }
