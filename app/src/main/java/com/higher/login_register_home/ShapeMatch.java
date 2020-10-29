@@ -5,6 +5,7 @@ import androidx.fragment.app.DialogFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -27,15 +28,17 @@ public class ShapeMatch extends AppCompatActivity {
     private ImageView imgShape;
     private RecyclerView recOptionList;
     private TextView txtQuestionNumber;
-    private ImageButton btnBack;
-    private ImageButton btnNext;
 
     //Variables
     private int currQuestion = 0; //Stores the current question (Defaults to 0).
     private int displayCurrNumber = 1; //The question number displayed to user
     private int totalQuestions = 0; //Stores the max number of questions (Defaults to 0).
     private List<QuestionObject> Questions;
-    OptionsAdapter adapter;
+    private OptionsAdapter adapter;
+    private List<Boolean> markTracking;
+
+    //Objects
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -43,55 +46,31 @@ public class ShapeMatch extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shape_match);
 
-        setVariables(); //Sets all the variables up with their respective components
-
         //Collects intents
         Intent intent = getIntent();
+        int level = intent.getIntExtra("Level", 1);
+        setVariables(level); //Sets all the variables up with their respective components
         totalQuestions = Questions.size();
-        int level = intent.getIntExtra("level", 1);
 
         prepQuestion();
-
-        btnNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (displayCurrNumber < totalQuestions) {
-                    displayCurrNumber += 1;
-                    currQuestion += 1;
-                    prepQuestion();
-                    AnswerDisplay dialog = new AnswerDisplay();
-                    dialog.setTitle("Correct");
-                    dialog.setMessage("This works");
-                    dialog.show(getSupportFragmentManager(), "MyDialogFragmentTag");
-                }
-            }
-        });
-
-        btnBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (displayCurrNumber > 1) {
-                    displayCurrNumber -= 1;
-                    currQuestion -= 1;
-                    prepQuestion();
-                }
-            }
-        });
+        for (int i = 0; i < totalQuestions; i++)
+        {
+            markTracking.add(false);
+        }
     }
 
     //Sets all components to a variable.
-    public void setVariables()
+    public void setVariables(int level)
     {
         imgShape = findViewById(R.id.imgShape);
         recOptionList = findViewById(R.id.recOption);
         txtQuestionNumber = findViewById(R.id.txtQuestionNumber);
-        btnBack = findViewById(R.id.btnBack);
-        btnNext = findViewById(R.id.btnNext);
 
         Questions = new ArrayList<>();
 
         DifficultyAdapter createQuestion = new DifficultyAdapter();
-        Questions = createQuestion.generateQuestion(1, this);
+        Questions = createQuestion.generateQuestion(level, this);
+        markTracking = new ArrayList<>();
     }
 
     private void prepQuestion()
@@ -106,6 +85,7 @@ public class ShapeMatch extends AppCompatActivity {
     {
         recOptionList.setHasFixedSize(true);
         adapter = new OptionsAdapter(option);
+        adapter.setCurrentGuess(Questions.get(currQuestion).getShape());
 
         recOptionList.setLayoutManager(new LinearLayoutManager(this));
         recOptionList.setAdapter(adapter);
@@ -113,13 +93,39 @@ public class ShapeMatch extends AppCompatActivity {
         adapter.setOnOptionsClickListener(new OptionsAdapter.onOptionClickListener() {
             @Override
             public void onOptionClick(int position) {
-                if (Questions.get(currQuestion).getOption().get(position) == Questions.get(currQuestion).getShape()) {
-                    Toast.makeText(ShapeMatch.this, "Correct!", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(ShapeMatch.this, "Wrong, the correct answer is: " + Questions.get(currQuestion).getShape(), Toast.LENGTH_SHORT).show();
+                AnswerDisplay messageBox = new AnswerDisplay();
+                if (Questions.get(currQuestion).getOption().get(position) == Questions.get(currQuestion).getShape())
+                {
+                    messageBox.setTitle("Correct!");
+                    messageBox.setMessage("Well Done!" + "\n" + "The answer was " + Questions.get(currQuestion).getShape() + "!");
                 }
+                else
+                {
+                    messageBox.setTitle("Wrong...");
+                    messageBox.setMessage("Nice try!" + "\n" + "The answer was " + Questions.get(currQuestion).getShape() + "!");
+                }
+
+                markTracking.set(currQuestion, true);
+                messageBox.showNow(getSupportFragmentManager(), "messageBox");
+                messageBox.getDialog().setOnDismissListener(new DialogInterface.OnDismissListener() {
+                    @Override
+                    public void onDismiss(DialogInterface dialogInterface) {
+
+                        if (displayCurrNumber == totalQuestions)
+                        {
+
+                        }
+                        else
+                        {
+                            displayCurrNumber += 1;
+                            currQuestion += 1;
+                            prepQuestion();
+                        }
+                    }
+                });
             }
         });
+
 
     }
 }
