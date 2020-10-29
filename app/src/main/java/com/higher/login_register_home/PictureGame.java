@@ -18,6 +18,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import com.higher.login_register_home.Message.AnswerDisplay;
+
 import org.w3c.dom.Text;
 
 import java.io.File;
@@ -37,11 +39,14 @@ public class PictureGame extends AppCompatActivity {
 
     List<Cell> allFilesPaths;
     ArrayList<Cell> images;
-    int count;
+    int count, correctAnswerCount;
     ImageView imageView;
     Button button1, button2, button3, buttonNext;
     TextView heading;
     String answerText, colorGreen = "#008000", colorPrimaryDark = "#3700B3", colorRed = "#FF0000";
+    AnswerDisplay messageBox = new AnswerDisplay();
+    Cell correctCell;
+    Boolean resultsShown = false;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -67,12 +72,22 @@ public class PictureGame extends AppCompatActivity {
                     heading.setTextColor(Color.parseColor(colorGreen));
                     button1.setBackgroundColor(Color.parseColor(colorGreen));
 
+                    correctAnswerCount++;
+
+                    messageBox.setTitle("Correct!");
+                    messageBox.setMessage("Well Done!" + "\n" + "The answer was " + answerText + "!");
                 }
                 else{
                     heading.setText("Incorrect");
                     heading.setTextColor(Color.parseColor(colorRed));
                     button1.setBackgroundColor(Color.parseColor(colorRed));
+
+                    images.add(correctCell);
+
+                    messageBox.setTitle("Incorrect");
+                    messageBox.setMessage("Well Tried!" + "\n" + "The answer was " + answerText + "!");
                 }
+                messageBox.show(getSupportFragmentManager(), "messageBox");
                 button2.setVisibility(View.INVISIBLE);
                 button3.setVisibility(View.INVISIBLE);
                 buttonNext.setVisibility(View.VISIBLE);
@@ -87,12 +102,22 @@ public class PictureGame extends AppCompatActivity {
                     heading.setTextColor(Color.parseColor(colorGreen));
                     button2.setBackgroundColor(Color.parseColor(colorGreen));
 
+                    correctAnswerCount++;
+
+                    messageBox.setTitle("Correct!");
+                    messageBox.setMessage("Well Done!" + "\n" + "The answer was " + answerText + "!");
                 }
                 else{
                     heading.setText("Incorrect");
                     heading.setTextColor(Color.parseColor(colorRed));
                     button2.setBackgroundColor(Color.parseColor(colorRed));
+
+                    images.add(correctCell);
+
+                    messageBox.setTitle("Incorrect");
+                    messageBox.setMessage("Well Tried!" + "\n" + "The answer was " + answerText + "!");
                 }
+                messageBox.show(getSupportFragmentManager(), "messageBox");
                 button1.setVisibility(View.INVISIBLE);
                 button3.setVisibility(View.INVISIBLE);
                 buttonNext.setVisibility(View.VISIBLE);
@@ -107,12 +132,22 @@ public class PictureGame extends AppCompatActivity {
                     heading.setTextColor(Color.parseColor(colorGreen));
                     button3.setBackgroundColor(Color.parseColor(colorGreen));
 
+                    correctAnswerCount++;
+
+                    messageBox.setTitle("Correct!");
+                    messageBox.setMessage("Well Done!" + "\n" + "The answer was " + answerText + "!");
                 }
                 else{
                     heading.setText("Incorrect");
                     heading.setTextColor(Color.parseColor(colorRed));
                     button3.setBackgroundColor(Color.parseColor(colorRed));
+
+                    images.add(correctCell);
+
+                    messageBox.setTitle("Incorrect");
+                    messageBox.setMessage("Well Tried!" + "\n" + "The answer was " + answerText + "!");
                 }
+                messageBox.show(getSupportFragmentManager(), "messageBox");
                 button1.setVisibility(View.INVISIBLE);
                 button2.setVisibility(View.INVISIBLE);
                 buttonNext.setVisibility(View.VISIBLE);
@@ -125,12 +160,19 @@ public class PictureGame extends AppCompatActivity {
             public void onClick(View v) {
                 if(count >= images.size()){
 
-                    //game is over so go back to main menu
-                    //TODO maybe add a results page showing user score and/or what they got wrong and right
-                    Toast.makeText(PictureGame.this, "Game is over, thanks for playing!" , Toast.LENGTH_SHORT).show();
+                    //game is over so show results and go back to main menu
 
-                    Intent myIntent = new Intent(PictureGame.this, PictureMenuActivity.class);
-                    PictureGame.this.startActivity(myIntent);
+                    messageBox.setTitle("Game complete!");
+                    messageBox.setMessage("Well Done!" + "\n" + "Your results are " + correctAnswerCount + "/"+ count +"!");
+
+                    if(resultsShown){
+                        Intent myIntent = new Intent(PictureGame.this, PictureMenuActivity.class);
+                        PictureGame.this.startActivity(myIntent);
+                    }
+                    else{
+                        messageBox.show(getSupportFragmentManager(), "messageBox");
+                    }
+                    resultsShown = true;
                 }
                 else{
 
@@ -161,6 +203,8 @@ public class PictureGame extends AppCompatActivity {
 
         Collections.shuffle(images);
         count = 0;
+        correctAnswerCount = 0;
+        correctCell = new Cell();
 
         if(images.size()<3){
             Toast.makeText(PictureGame.this, "Please add at least 3 pictures before starting the game!" , Toast.LENGTH_SHORT).show();
@@ -186,6 +230,8 @@ public class PictureGame extends AppCompatActivity {
         String answer, dummy1 = "", dummy2 = "";
         String[] splitTemp;
         int randomTemp = -1, dummy1Int = -1, dummy2Int = -1;
+
+        correctCell = images.get(count);
 
         //display answer's picture
         setImageFromPath(images.get(count).getPath(), imageView);
