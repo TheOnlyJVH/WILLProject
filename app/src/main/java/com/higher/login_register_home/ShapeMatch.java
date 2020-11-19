@@ -37,9 +37,6 @@ public class ShapeMatch extends AppCompatActivity {
     private OptionsAdapter adapter;
     private List<Boolean> markTracking;
 
-    //Objects
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -93,11 +90,12 @@ public class ShapeMatch extends AppCompatActivity {
         adapter.setOnOptionsClickListener(new OptionsAdapter.onOptionClickListener() {
             @Override
             public void onOptionClick(int position) {
-                AnswerDisplay messageBox = new AnswerDisplay();
+                final AnswerDisplay messageBox = new AnswerDisplay();
                 if (Questions.get(currQuestion).getOption().get(position) == Questions.get(currQuestion).getShape())
                 {
                     messageBox.setTitle("Correct!");
                     messageBox.setMessage("Well Done!" + "\n" + "The answer was " + Questions.get(currQuestion).getShape() + "!");
+                    markTracking.set(currQuestion, true);
                 }
                 else
                 {
@@ -105,15 +103,14 @@ public class ShapeMatch extends AppCompatActivity {
                     messageBox.setMessage("Nice try!" + "\n" + "The answer was " + Questions.get(currQuestion).getShape() + "!");
                 }
 
-                markTracking.set(currQuestion, true);
                 messageBox.showNow(getSupportFragmentManager(), "messageBox");
                 messageBox.getDialog().setOnDismissListener(new DialogInterface.OnDismissListener() {
                     @Override
-                    public void onDismiss(DialogInterface dialogInterface) {
-
+                    public void onDismiss(DialogInterface dialogInterface)
+                    {
                         if (displayCurrNumber == totalQuestions)
                         {
-
+                            displayScore();
                         }
                         else
                         {
@@ -127,5 +124,28 @@ public class ShapeMatch extends AppCompatActivity {
         });
 
 
+    }
+
+    private void displayScore()
+    {
+        int score = 0;
+        for (Boolean answer: markTracking)
+        {
+            if (answer)
+            {
+                score++;
+            }
+        }
+        AnswerDisplay messageBox = new AnswerDisplay();
+        messageBox.setTitle("Final Score");
+        messageBox.setMessage("Well Done!" + "\n" + "Your score is: "  + score + "/" + markTracking.size()  + "!");
+        messageBox.showNow(getSupportFragmentManager(), "messageBox");
+        messageBox.getDialog().setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialogInterface)
+            {
+                finish();
+            }
+        });
     }
 }
