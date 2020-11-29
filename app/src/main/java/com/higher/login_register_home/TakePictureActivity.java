@@ -95,6 +95,7 @@ public class TakePictureActivity extends AppCompatActivity {
                         if(from.exists())
                             Toast.makeText(TakePictureActivity.this, "Photo successfully named." , Toast.LENGTH_SHORT).show();
                         from.renameTo(to);
+                        startActivity(new Intent(TakePictureActivity.this, PictureMenuActivity.class));
                     }
 
                 }

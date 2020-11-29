@@ -3,32 +3,23 @@ package com.higher.login_register_home;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
-import android.graphics.Picture;
 import android.os.Bundle;
 import android.os.Environment;
-import android.os.PersistableBundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
 import com.higher.login_register_home.Message.AnswerDisplay;
 
-import org.w3c.dom.Text;
-
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 
 //_____Camera Code
 // Coded By: Hilton
@@ -48,6 +39,8 @@ public class PictureGame extends AppCompatActivity {
     Cell correctCell;
     Boolean resultsShown = false;
 
+
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +52,7 @@ public class PictureGame extends AppCompatActivity {
         button3 = findViewById(R.id.button3);
         buttonNext = findViewById(R.id.buttonNext);
         heading = findViewById(R.id.txtHeading);
+        messageBox.setCancelable(false);
 
         setupGame();
 
@@ -90,7 +84,8 @@ public class PictureGame extends AppCompatActivity {
                 messageBox.show(getSupportFragmentManager(), "messageBox");
                 button2.setVisibility(View.INVISIBLE);
                 button3.setVisibility(View.INVISIBLE);
-                buttonNext.setVisibility(View.VISIBLE);
+                //buttonNext.setVisibility(View.VISIBLE);
+                goNext();
             }
         });
 
@@ -120,7 +115,8 @@ public class PictureGame extends AppCompatActivity {
                 messageBox.show(getSupportFragmentManager(), "messageBox");
                 button1.setVisibility(View.INVISIBLE);
                 button3.setVisibility(View.INVISIBLE);
-                buttonNext.setVisibility(View.VISIBLE);
+                //buttonNext.setVisibility(View.VISIBLE);
+                goNext();
             }
         });
 
@@ -150,7 +146,8 @@ public class PictureGame extends AppCompatActivity {
                 messageBox.show(getSupportFragmentManager(), "messageBox");
                 button1.setVisibility(View.INVISIBLE);
                 button2.setVisibility(View.INVISIBLE);
-                buttonNext.setVisibility(View.VISIBLE);
+                //buttonNext.setVisibility(View.VISIBLE);
+                goNext();
             }
         });
 
@@ -158,40 +155,48 @@ public class PictureGame extends AppCompatActivity {
         buttonNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(count >= images.size()){
-
-                    //game is over so show results and go back to main menu
-
-                    messageBox.setTitle("Game complete!");
-                    messageBox.setMessage("Well Done!" + "\n" + "Your results are " + correctAnswerCount + "/"+ count +"!");
-
-                    if(resultsShown){
-                        Intent myIntent = new Intent(PictureGame.this, PictureMenuActivity.class);
-                        PictureGame.this.startActivity(myIntent);
-                    }
-                    else{
-                        messageBox.show(getSupportFragmentManager(), "messageBox");
-                    }
-                    resultsShown = true;
-                }
-                else{
-
-                    //resetting everything for next question
-                    button1.setVisibility(View.VISIBLE);
-                    button2.setVisibility(View.VISIBLE);
-                    button3.setVisibility(View.VISIBLE);
-                    buttonNext.setVisibility(View.INVISIBLE);
-                    button1.setBackgroundColor(Color.parseColor(colorPrimaryDark));
-                    button2.setBackgroundColor(Color.parseColor(colorPrimaryDark));
-                    button3.setBackgroundColor(Color.parseColor(colorPrimaryDark));
-
-                    heading.setText("Who is this?");
-                    heading.setTextColor(Color.parseColor(colorPrimaryDark));
-
-                    loadRound(images);
-                }
+                Intent myIntent = new Intent(PictureGame.this, PictureMenuActivity.class);
+                PictureGame.this.startActivity(myIntent);
             }
         });
+
+
+    }
+    public void goNext(){
+        if(count >= images.size()){
+
+            //game is over so show results and go back to main menu
+
+            messageBox.setTitle("Game complete!");
+            messageBox.setMessage("Well Done!" + "\n" + "Your results are " + correctAnswerCount + "/"+ count +"!");
+
+            buttonNext.setVisibility(View.VISIBLE);
+
+            /*if(resultsShown){
+                Intent myIntent = new Intent(PictureGame.this, PictureMenuActivity.class);
+                PictureGame.this.startActivity(myIntent);
+            }
+            else{
+                messageBox.show(getSupportFragmentManager(), "messageBox");
+            }*/
+            resultsShown = true;
+        }
+        else{
+
+            //resetting everything for next question
+            button1.setVisibility(View.VISIBLE);
+            button2.setVisibility(View.VISIBLE);
+            button3.setVisibility(View.VISIBLE);
+            buttonNext.setVisibility(View.INVISIBLE);
+            button1.setBackgroundColor(Color.parseColor(colorPrimaryDark));
+            button2.setBackgroundColor(Color.parseColor(colorPrimaryDark));
+            button3.setBackgroundColor(Color.parseColor(colorPrimaryDark));
+
+            heading.setText("Who is this?");
+            heading.setTextColor(Color.parseColor(colorPrimaryDark));
+
+            loadRound(images);
+        }
     }
 
     public void setupGame(){
@@ -295,7 +300,6 @@ public class PictureGame extends AppCompatActivity {
         }
         return  allFiles;
     }
-    //TODO these two methods are very similar and can probably be merged
 
     //prepare the images for the array list
     public ArrayList<Cell> prepareData(){
