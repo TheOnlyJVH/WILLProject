@@ -54,7 +54,7 @@ public class Home extends AppCompatActivity {
         crdPuzzles.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Home.this, puzzleGame.class));
+                //startActivity(new Intent(Home.this, .class));
             }
         });
     }

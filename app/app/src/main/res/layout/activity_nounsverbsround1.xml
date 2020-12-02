@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3E3B3B"
+    tools:context=".nounsverbsRound1">
+
+    <Button
+        android:id="@+id/btnNoun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="68dp"
+        android:background="#fddb3a"
+        android:text="Noun"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/word" />
+
+    <Button
+        android:id="@+id/btnVerb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="97dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="65dp"
+        android:background="#fddb3a"
+        android:text="Verb"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/btnNoun"
+        app:layout_constraintTop_toBottomOf="@+id/word" />
+
+    <EditText
+        android:id="@+id/word"
+        android:layout_width="165dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="96dp"
+        android:backgroundTint="#3E3B3B"
+        android:clickable="false"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="WALKING"
+        android:textColor="@android:color/holo_purple"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image" />
+
+    <EditText
+        android:id="@+id/round"
+        style="@style/Widget.AppCompat.AutoCompleteTextView"
+        android:layout_width="213dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="54dp"
+        android:layout_marginEnd="147dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="NOUNS/VERBS"
+        android:backgroundTint="#3E3B3B"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textColor="@android:color/holo_blue_bright"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="253dp"
+        android:layout_height="190dp"
+        android:layout_marginStart="127dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="142dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.432"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/round"
+        app:srcCompat="@drawable/f" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

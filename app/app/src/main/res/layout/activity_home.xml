@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Home"
+    android:background="#F5F5F5"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight=".85"
+        android:background="#f3665f">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/architects_daughter"
+            android:text="Main Menu"
+            android:textSize="30dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_weight=".15"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#f1eae5">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/crdShapes"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    app:cardBackgroundColor="#FFA500"
+                    android:padding="10dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="10dp"
+                    app:cardUseCompatPadding="true"
+                    app:contentPadding="10dp">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imgShapes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:padding="10dp"
+                            app:srcCompat="@drawable/shapes" />
+
+                        <TextView
+                            android:id="@+id/txtShapes"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="30dp"
+                            android:text="Shape Game!"
+                            android:fontFamily="@font/architects_daughter"
+                            android:textAlignment="center"
+                            android:textSize="25dp" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/crdMaths"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    app:cardBackgroundColor="#FFFF00"
+                    android:padding="10dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="10dp"
+                    app:cardUseCompatPadding="true"
+                    app:contentPadding="10dp">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imgMaths"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:padding="10dp"
+                            app:srcCompat="@drawable/math" />
+
+                        <TextView
+                            android:id="@+id/txtMaths"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="30dp"
+                            android:text="Maths Game!"
+                            android:fontFamily="@font/architects_daughter"
+                            android:textAlignment="center"
+                            android:textSize="25dp" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/crdNouns"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    app:cardBackgroundColor="#008000"
+                    android:padding="10dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="10dp"
+                    app:cardUseCompatPadding="true"
+                    app:contentPadding="10dp">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imgNouns"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:padding="10dp"
+                            app:srcCompat="@drawable/nouns" />
+
+                        <TextView
+                            android:id="@+id/txtNouns"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="30dp"
+                            android:text="Nouns and Verbs Game!"
+                            android:fontFamily="@font/architects_daughter"
+                            android:textAlignment="center"
+                            android:textSize="25dp" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/crdPictures"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    app:cardBackgroundColor="#3eabeb"
+                    android:padding="10dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="10dp"
+                    app:cardUseCompatPadding="true"
+                    app:contentPadding="10dp">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imgPicture"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:padding="10dp"
+                            app:srcCompat="@drawable/pictures" />
+
+                        <TextView
+                            android:id="@+id/txtPictures"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="30dp"
+                            android:text="Pictures Game!"
+                            android:fontFamily="@font/architects_daughter"
+                            android:textAlignment="center"
+                            android:textSize="25dp" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/crdPuzzles"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    app:cardBackgroundColor="#EE82EE"
+                    android:padding="10dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="10dp"
+                    app:cardUseCompatPadding="true"
+                    app:contentPadding="10dp">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imgPuzzle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:padding="10dp"
+                            app:srcCompat="@drawable/puzzle" />
+
+                        <TextView
+                            android:id="@+id/txtPuzzle"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="30dp"
+                            android:text="Puzzle Games!"
+                            android:fontFamily="@font/architects_daughter"
+                            android:textAlignment="center"
+                            android:textSize="25dp" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+</LinearLayout>

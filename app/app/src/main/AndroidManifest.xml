@@ -28,9 +28,7 @@
         <activity android:name=".Login" />
         <activity android:name=".Home" />
         <activity android:name=".MathMenuActivity" />
-        <activity android:name=".MathGame" />
-        <activity android:name=".nounsverbsMenu" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".nounsverbsMenu">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
