@@ -155,8 +155,7 @@ public class PictureGame extends AppCompatActivity {
         buttonNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(PictureGame.this, PictureMenuActivity.class);
-                PictureGame.this.startActivity(myIntent);
+                finish();
             }
         });
 
@@ -213,13 +212,10 @@ public class PictureGame extends AppCompatActivity {
 
         if(images.size()<3){
             Toast.makeText(PictureGame.this, "Please add at least 3 pictures before starting the game!" , Toast.LENGTH_SHORT).show();
-
-            Intent myIntent = new Intent(PictureGame.this, PictureMenuActivity.class);
-            PictureGame.this.startActivity(myIntent);
+            finish();
         }
         else{
             loadRound(images);
-
         }
 
 
