@@ -10,7 +10,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="379dp"
         android:layout_weight=".85"
         android:background="#f3665f">
 
@@ -18,9 +18,9 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
-            android:fontFamily="@font/architects_daughter"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/alegreya_sans_bold"
             android:text="Main Menu"
             android:textSize="30dp" />
     </RelativeLayout>
@@ -70,7 +70,7 @@
                             android:layout_height="match_parent"
                             android:padding="30dp"
                             android:text="Shape Game!"
-                            android:fontFamily="@font/architects_daughter"
+                            android:fontFamily="@font/alegreya_sans_bold"
                             android:textAlignment="center"
                             android:textSize="25dp" />
                     </androidx.appcompat.widget.LinearLayoutCompat>
@@ -105,7 +105,7 @@
                             android:layout_height="match_parent"
                             android:padding="30dp"
                             android:text="Maths Game!"
-                            android:fontFamily="@font/architects_daughter"
+                            android:fontFamily="@font/alegreya_sans_bold"
                             android:textAlignment="center"
                             android:textSize="25dp" />
                     </androidx.appcompat.widget.LinearLayoutCompat>
@@ -140,7 +140,7 @@
                             android:layout_height="match_parent"
                             android:padding="30dp"
                             android:text="Nouns and Verbs Game!"
-                            android:fontFamily="@font/architects_daughter"
+                            android:fontFamily="@font/alegreya_sans_bold"
                             android:textAlignment="center"
                             android:textSize="25dp" />
                     </androidx.appcompat.widget.LinearLayoutCompat>
@@ -175,7 +175,7 @@
                             android:layout_height="match_parent"
                             android:padding="30dp"
                             android:text="Pictures Game!"
-                            android:fontFamily="@font/architects_daughter"
+                            android:fontFamily="@font/alegreya_sans_bold"
                             android:textAlignment="center"
                             android:textSize="25dp" />
                     </androidx.appcompat.widget.LinearLayoutCompat>
@@ -210,7 +210,7 @@
                             android:layout_height="match_parent"
                             android:padding="30dp"
                             android:text="Puzzle Games!"
-                            android:fontFamily="@font/architects_daughter"
+                            android:fontFamily="@font/alegreya_sans_bold"
                             android:textAlignment="center"
                             android:textSize="25dp" />
                     </androidx.appcompat.widget.LinearLayoutCompat>

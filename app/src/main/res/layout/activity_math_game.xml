@@ -4,69 +4,65 @@
     android:orientation="vertical"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:background="@drawable/ic_mathbackground"
+    xmlns:android="http://schemas.android.com/apk/res/android"><![CDATA[
+
+    >
+
+
+
+    ]]>
 
     <TextView
-        android:layout_height="wrap_content"
+        android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:textSize="48sp"
-        android:text="TextView"
-        android:gravity="center"
+        android:layout_height="wrap_content"
         android:fontFamily="sans-serif-medium"
-        android:id="@+id/textView"/>
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="@color/colorBlack"
+        android:textSize="48sp" />
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent">
+    <Button
+        android:id="@+id/topLeft"
+        android:layout_width="350dp"
+        android:layout_height="125dp"
+        android:layout_margin="15dp"
+        android:layout_weight="1"
+        android:background="@drawable/button"
+        android:text="press me"
+        android:textSize="30sp" />
 
-        <Button
-            android:layout_height="150dp"
-            android:layout_width="wrap_content"
-            android:textSize="18sp"
-            android:text="press me"
-            android:id="@+id/topLeft"
-            android:background="@drawable/button"
-            android:layout_weight="1"
-            android:layout_margin="15dp"/>
-
-        <Button
-            android:layout_height="150dp"
-            android:layout_width="wrap_content"
-            android:textSize="18sp"
-            android:text="press me"
-            android:id="@+id/topRight"
-            android:background="@drawable/button"
-            android:layout_weight="1"
-            android:layout_margin="15dp"/>
-
-    </LinearLayout>
+    <Button
+        android:id="@+id/topRight"
+        android:layout_width="350dp"
+        android:layout_height="125dp"
+        android:layout_margin="15dp"
+        android:layout_weight="1"
+        android:background="@drawable/button"
+        android:text="press me"
+        android:textSize="30sp" />
 
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent">
+    <Button
+        android:id="@+id/bottomLeft"
+        android:layout_width="350dp"
+        android:layout_height="125dp"
+        android:layout_margin="15dp"
+        android:layout_weight="1"
+        android:background="@drawable/button"
+        android:text="press me"
+        android:textSize="30sp" />
 
-        <Button
-            android:layout_height="150dp"
-            android:layout_width="wrap_content"
-            android:textSize="18sp"
-            android:text="press me"
-            android:id="@+id/bottomLeft"
-            android:background="@drawable/button"
-            android:layout_weight="1"
-            android:layout_margin="15dp"/>
+    <Button
+        android:id="@+id/bottomRight"
+        android:layout_width="350dp"
+        android:layout_height="125dp"
+        android:layout_margin="15dp"
+        android:layout_weight="1"
+        android:background="@drawable/button"
+        android:text="press me"
+        android:textSize="30sp" />
 
-        <Button
-            android:layout_height="150dp"
-            android:layout_width="wrap_content"
-            android:textSize="18sp"
-            android:text="press me"
-            android:id="@+id/bottomRight"
-            android:background="@drawable/button"
-            android:layout_weight="1"
-            android:layout_margin="15dp"/>
 
-    </LinearLayout>
 </LinearLayout>

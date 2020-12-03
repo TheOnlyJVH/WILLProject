@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ShapeMatch"
     android:orientation="vertical"
-    android:background="@drawable/ic_wave">
+    android:background="@drawable/ic_shapebackground">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -52,6 +52,7 @@
                 android:id="@+id/txtQuestionNumber"
                 android:layout_width="match_parent"
                 android:layout_height="44dp"
+                android:fontFamily="@font/alegreya_sans_bold"
                 android:text="X/X"
                 android:textAlignment="center"
                 android:textSize="36sp"/>

@@ -4,59 +4,75 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3E3B3B"
+    android:background="@drawable/ic_nounbackground"
     tools:context=".nounsverbsMenu">
 
     <Button
         android:id="@+id/round1"
-        android:layout_width="235dp"
-        android:layout_height="52dp"
+        android:layout_width="280dp"
+        android:layout_height="80dp"
         android:layout_marginStart="88dp"
-        android:layout_marginTop="74dp"
+        android:layout_marginTop="96dp"
         android:layout_marginEnd="88dp"
         android:backgroundTint="@android:color/holo_orange_dark"
+        android:fontFamily="@font/alegreya_sans_bold"
         android:text="ROUND 1"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.511"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/round3"
-        android:layout_width="235dp"
-        android:layout_height="52dp"
+        android:layout_width="280dp"
+        android:layout_height="80dp"
         android:layout_marginStart="88dp"
+        android:layout_marginTop="88dp"
         android:layout_marginEnd="88dp"
-        android:layout_marginBottom="199dp"
         android:backgroundTint="@android:color/holo_purple"
+        android:fontFamily="@font/alegreya_sans_bold"
         android:text="ROUND 3"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/round2"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/round2"
-        android:layout_width="235dp"
-        android:layout_height="52dp"
+        android:layout_width="280dp"
+        android:layout_height="80dp"
         android:layout_marginStart="88dp"
-        android:layout_marginTop="106dp"
+        android:layout_marginTop="80dp"
         android:layout_marginEnd="88dp"
         android:backgroundTint="@color/colorAccent"
+        android:fontFamily="@font/alegreya_sans_bold"
         android:text="ROUND 2"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.511"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/round1" />
+        app:layout_constraintTop_toBottomOf="@+id/round1"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="206dp"
         android:layout_height="60dp"
         android:layout_marginStart="117dp"
-        android:layout_marginTop="47dp"
+        android:layout_marginTop="48dp"
         android:layout_marginEnd="88dp"
+        android:fontFamily="@font/alegreya_sans_bold"
         android:text="LEVELS"
+        android:textAlignment="center"
+        android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
-        android:textColor="#FFF"
+        android:textColor="@color/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

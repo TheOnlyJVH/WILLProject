@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3E3B3B"
+    android:background="@drawable/ic_nounbackground"
     tools:context=".nounsverbsRound2">
 
     <ImageView
@@ -15,7 +15,6 @@
         android:layout_marginTop="74dp"
         android:layout_marginEnd="105dp"
         android:tag="NOUN"
-        app:layout_constraintBottom_toTopOf="@+id/word1"
         app:layout_constraintEnd_toStartOf="@+id/image2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/questionWord"
@@ -40,7 +39,7 @@
         android:id="@+id/image4"
         android:layout_width="139dp"
         android:layout_height="128dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="48dp"
         android:layout_marginEnd="16dp"
         android:scaleType="fitXY"
         android:tag="NOUN"
@@ -55,7 +54,7 @@
         android:layout_height="128dp"
         android:layout_marginStart="34dp"
         android:layout_marginEnd="105dp"
-        android:layout_marginBottom="21dp"
+        android:layout_marginBottom="40dp"
         android:scaleType="fitXY"
         android:tag="VERB"
         app:layout_constraintBottom_toTopOf="@+id/word3"
@@ -63,73 +62,68 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:srcCompat="@drawable/c" />
 
+
     <Button
         android:id="@+id/word1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="157dp"
-        android:layout_marginBottom="88dp"
+        android:layout_width="130dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="44dp"
         android:backgroundTint="@android:color/holo_orange_light"
         android:text="NOUN"
         app:layout_constraintBottom_toTopOf="@+id/image3"
-        app:layout_constraintEnd_toStartOf="@+id/word2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image1" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.11"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/word2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="157dp"
+        android:layout_width="130dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="24dp"
         android:layout_marginBottom="88dp"
         android:backgroundTint="@color/colorAccent"
         android:text="VERB"
         app:layout_constraintBottom_toTopOf="@+id/image4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/word1"
         app:layout_constraintTop_toBottomOf="@+id/image2" />
 
     <Button
-        android:id="@+id/word3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="59dp"
-        android:layout_marginEnd="146dp"
-        android:layout_marginBottom="67dp"
-        android:backgroundTint="@android:color/holo_purple"
-        android:text="VERB"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/word4"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
         android:id="@+id/word4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="146dp"
-        android:layout_marginTop="21dp"
-        android:layout_marginBottom="67dp"
+        android:layout_width="130dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="64dp"
         android:backgroundTint="@android:color/holo_blue_dark"
         android:text="NOUN"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/word3"
-        app:layout_constraintTop_toBottomOf="@+id/image4" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
+    <Button
+        android:id="@+id/word3"
+        android:layout_width="130dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="64dp"
+        android:backgroundTint="@android:color/holo_purple"
+        android:text="VERB"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/questionWord"
-        android:layout_width="228dp"
-        android:layout_height="56dp"
+        android:layout_width="243dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="96dp"
         android:backgroundTint="@color/colorAccent"
-        android:layout_marginTop="56dp"
-        android:layout_marginEnd="92dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="IDENTIFY : VERB"
-        android:textColor="#fff"
+        android:text="IDENTIFY : NOUN"
+        android:textColor="@color/colorAccent"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/image1"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
