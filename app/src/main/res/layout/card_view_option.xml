@@ -21,7 +21,7 @@
             android:layout_height="match_parent"
             android:padding="0dp"
             android:text="Shape Game!"
-            android:fontFamily="@font/architects_daughter"
+            android:fontFamily="@font/alegreya_sans_bold"
             android:textAlignment="center"
             android:textSize="25dp" />
     </androidx.appcompat.widget.LinearLayoutCompat>

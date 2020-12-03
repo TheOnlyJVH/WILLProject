@@ -13,19 +13,22 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="78dp"
         android:layout_margin="4dp">
 
         <TextView
             android:id="@+id/txtLevel"
-            android:layout_width="wrap_content"
+            android:layout_width="110dp"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="250dp"
+            android:layout_marginBottom="15dp"
+            android:fontFamily="@font/alegreya_sans_bold"
+            android:padding="dp"
             android:text="Level"
-            android:padding="3dp"
-            android:fontFamily="@font/architects_daughter"
-            android:textAlignment="center"
-            android:textSize="35dp"/>
+            android:textSize="36sp"
+            android:textStyle="bold" />
 
     </RelativeLayout>
 

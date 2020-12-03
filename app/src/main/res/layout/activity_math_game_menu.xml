@@ -5,11 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ShapeMatchMenu"
+    android:background="@drawable/ic_mathbackground"
     android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="493dp"
         android:layout_weight=".85"
         android:background="#f3665f">
 
@@ -18,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:fontFamily="@font/architects_daughter"
+            android:fontFamily="@font/alegreya_sans_bold"
             android:text="Math Game"
             android:textSize="30dp" />
     </RelativeLayout>

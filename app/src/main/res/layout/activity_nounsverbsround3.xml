@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3E3B3B"
+    android:background="@drawable/ic_nounbackground"
     tools:context=".nounsverbsRound3">
 
     <ImageButton
@@ -54,12 +54,13 @@
         android:id="@+id/image6"
         android:layout_width="139dp"
         android:layout_height="128dp"
-        android:layout_marginEnd="16dp"
         android:layout_marginBottom="43dp"
         android:backgroundTint="@android:color/background_light"
         android:tag="NOUN"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.926"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image4"
         tools:srcCompat="@drawable/e" />
 
@@ -93,20 +94,23 @@
 
     <EditText
         android:id="@+id/questionWord"
-        android:layout_width="228dp"
-        android:backgroundTint="@color/colorAccent"
-        android:layout_height="56dp"
+        android:layout_width="254dp"
+        android:layout_height="66dp"
         android:layout_marginStart="109dp"
         android:layout_marginEnd="92dp"
         android:layout_marginBottom="56dp"
+        android:backgroundTint="@color/colorAccent"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="IDENTIFY : VERB"
-        android:textColor="#fff"
+        android:text="IDENTIFY : NOUN"
+        android:textColor="@color/colorAccent"
         android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/image1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.459"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.318"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
