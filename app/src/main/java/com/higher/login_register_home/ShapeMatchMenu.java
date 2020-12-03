@@ -66,7 +66,6 @@ public class ShapeMatchMenu extends AppCompatActivity {
                 int level = position + 1;
                 Intent i = new Intent(ShapeMatchMenu.this, ShapeMatch.class);
                 i.putExtra("Level", level);
-                Toast.makeText(ShapeMatchMenu.this, position + "", Toast.LENGTH_SHORT).show();
                 startActivity(i);
             }
         });
