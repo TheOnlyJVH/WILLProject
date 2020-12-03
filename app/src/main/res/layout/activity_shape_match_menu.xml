@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ShapeMatchMenu"
-    android:background="@drawable/ic_shapebackground1"
+    android:background="@drawable/ic_shapebackground"
     android:orientation="vertical">
 
     <RelativeLayout
